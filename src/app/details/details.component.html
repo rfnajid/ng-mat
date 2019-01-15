@@ -1,0 +1,98 @@
+<div class="basic-container">
+  <h1 class="mat-h1">Details</h1>
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="1%">
+      <mat-card fxFlex="20">
+        <mat-card-content>
+          <ul class="menu-details">
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+            <li>Base Rider</li>
+            <li>Bonus Rate</li>
+            <li>Cash Value</li>
+            <li>Fee</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+      <mat-card fxFlex="80">
+          <mat-card-content>
+              <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+                  <!-- Id Column -->
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+                    <td mat-cell *matCellDef="let row">{{row.id}}</td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                    <td mat-cell *matCellDef="let row">{{row.name}}</td>
+                  </ng-container>
+
+                  <!-- Base Product -->
+                  <ng-container matColumnDef="baseproduct">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Base Product</th>
+                    <td mat-cell *matCellDef="let row">{{row.baseproduct}}</td>
+                  </ng-container>
+
+                  <!-- Rider Product -->
+                  <ng-container matColumnDef="riderproduct">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Rider Product</th>
+                    <td mat-cell *matCellDef="let row">{{row.riderproduct}}</td>
+                  </ng-container>
+
+                  <!-- Update date -->
+                  <ng-container matColumnDef="updatedate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Update Date</th>
+                    <td mat-cell *matCellDef="let row">{{row.updatedate}}</td>
+                  </ng-container>
+
+                  <!-- Update By -->
+                  <ng-container matColumnDef="updateby">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Update By</th>
+                    <td mat-cell *matCellDef="let row">{{row.updateby}}</td>
+                  </ng-container>
+
+                  <!-- Actions -->
+                  <ng-container matColumnDef="actions">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+                      <td mat-cell *matCellDef="let row">
+                        <div>
+                          <button type="button" class="btn btn-info btn-xs"><i class="fa fa-eye"></i></button>
+                          <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></button>
+                          <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator #paginator
+                    [length]="dataSource.data.length"
+                    [pageIndex]="0"
+                    [pageSize]="50"
+                    [pageSizeOptions]="[25, 50, 100, 250]">
+                </mat-paginator>
+          </mat-card-content>
+        </mat-card>
+    </div>
+</div>
